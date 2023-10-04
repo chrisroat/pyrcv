@@ -84,3 +84,5 @@ jobs:
               with:
                   working_directory: "server"
                   project_id: "rcv-tabulator"
+                  env_vars: |-
+                    SECRET_KEY=${{ secrets.SECRET_KEY }}

@@ -1,5 +1,6 @@
 import io
 import json
+import os
 
 import plotly
 from flask import Flask, render_template, request, url_for
@@ -10,7 +11,7 @@ from wtforms import BooleanField
 import pyrcv
 
 app = Flask(__name__)
-app.config["WTF_CSRF_ENABLED"] = False
+app.config["SECRET_KEY"] = os.environ["SECRET_KEY"]
 
 
 @app.context_processor
@@ -81,4 +82,4 @@ def election_results_viz_data(buffer, hide_exhausted=False):
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080, debug=True)
+    app.run(host="127.0.0.1", port=8080)
