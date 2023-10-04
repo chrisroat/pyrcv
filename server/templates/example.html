@@ -1,0 +1,14 @@
+{% extends 'results.html' %}
+
+{% block title %}Example Election Results{% endblock %}
+
+{% block content %}
+
+<p>
+  This page shows a visualization of a multi-round mock election, with a vote for best
+  pizza toppings (rank 4, top 3 win) and a vote for the best season (rank 1, 1 winner).
+  You can <a href="{{ url_for('static', filename=filename) }}">download the raw data</a>.
+</p>
+
+{{ super() }}
+{% endblock %}

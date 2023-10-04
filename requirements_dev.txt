@@ -1,0 +1,16 @@
+black
+build
+bump2version
+coverage
+flake8
+isort
+pip
+pytest
+sphinx
+sphinx-click
+sphinx_paramlinks
+sphinx_rtd_theme
+tox
+twine
+watchdog
+wheel

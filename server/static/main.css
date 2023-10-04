@@ -1,0 +1,4 @@
+/* Leaves room for navigation bar. */
+body {
+    padding-top: 70px;
+}

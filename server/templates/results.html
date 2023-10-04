@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Ranked Choice Voting Results{% endblock %}
+
+{% block head_scripts %}
+<script src="https://cdn.plot.ly/plotly-1.58.2.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+{% for datum in data %}
+<div class="row{{ ' border-bottom' if not loop.last else ''}}" style="page-break-after: always;">
+    <div class="col">
+        <dl>
+            <dt>Filename:</dt>
+            <dd>{{ filename }}</dt>
+        </dl>
+        <dl>
+            <dt>Race:</dt>
+            <dd>{{ datum.metadata.race_name }}</dd>
+        </dl>
+        <dl>
+            <dt>Winner(s):</dt>
+            <dd>{{ datum.winners | join(', ') }}</dd>
+            <div id="fig{{loop.index}}" class="chart"></div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    {% for datum in data %}
+    graphs = {{ datum.figure | safe }};
+    Plotly.plot('fig{{loop.index}}', graphs, {});
+    {% endfor %}
+</script>
+{% endblock %}

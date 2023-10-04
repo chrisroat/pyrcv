@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Tabulator{% endblock %}
+{% block content %}
+
+<p>
+    Use the RCV tabulator to run a ranked choice
+    election to determine the winner, understand round-by-round vote counts,
+    and visualize the vote flow in a Sankey diagram. The
+    <a href="{{ url_for('instructions') }}">Instructions</a> page walks you
+    through running an election with a Google Form. You can then analyze the
+    output spreadsheet by exporting as CSV and uploading here.
+</p>
+
+<form method="post" enctype="multipart/form-data" action="/">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">{{ form.results_csv(class_="form-control") }}</div>
+    <div class="mb-3 form-check">
+        {{ form.hide_exhausted(class_="form-check-input") }}
+        {{ form.hide_exhausted.label(class_="form-check-label") }}
+    </div>
+    <button type="submit" class="btn btn-primary mb-3">Analyze</button>
+</form>
+
+{% endblock %}

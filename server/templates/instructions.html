@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}Instructions{% endblock %}
+
+{% block content %}
+
+<p>
+    Use the RCV Tabulator to run a ranked choice election
+    to determine the winner, understand round-by-round vote counts, and visualize
+    the vote flow in a Sankey diagram.
+</p>
+
+<h4>Set Up</h4>
+
+<p>
+    To get started, use a <a href="https://docs.google.com/forms">Google Form</a> to run your election.
+    For each ranked-choice race, create a question using the following settings.
+</p>
+
+<ul>
+    <li>Select the "Multiple Choice Grid" question type</li>
+    <li>Enter the race or question in the "Question" space. If your contest has multiple
+        winners, append the string "(x winners)", replacing x with the number of winners.</li>
+    <li>Label the rows with each candidate's name</li>
+    <li>Label the columns "1st", "2nd", "3rd", ... [up to the number of rankings you allow]</li>
+    <li>Turn on the "Limit one response per column" setting.</li>
+    <li>Do NOT use the "Require a response in each row" setting, unless it is something you
+        *really* want. In most cases, it is acceptable to allow voters not to rank all
+        candidates. It is also acceptable to skip rankings, as the tabulation process
+        only cares about overall order (i.e. ranking 3 candidates as 2,4,5 is the same
+        as ranking them 1,2,3.)</li>
+    <li>It is recommended to use the "Shuffle row order" to remove any bias toward candidates
+        listed near the start of the order.</li>
+</ul>
+
+<div class="w-75 p-3">
+
+    <p>
+        The following image demonstrates the basic setup of a single-winner election, highlighting
+        all the settings described above.
+    </p>
+
+    <img src="/static/season_single-winner.png" class="img-fluid rounded mx-auto d-block"
+        alt="Example single-winner Google Form question about favorite season">
+</div>
+
+<div class="w-75 p-3">
+
+    <p>
+        The next image shows the wording change needed in a question for a multi-winner election.
+        Additionally, it demonstrates that you can limit the number of rankings required when
+        there are many options (which can happen in both single- and multi-winner elections).
+    </p>
+
+    <img src="{{ url_for('static', filename='pizza_multi-winner.png') }}" class="img-fluid rounded mx-auto d-block"
+        alt="Example multi-winner Google Form question about favorite pizza toppings">
+</div>
+
+<h4>Tablulation</h4>
+
+<p>
+    Once voting is complete for your entire election:
+</p>
+<ul>
+    <li>Go to the "Responses" tab of your form.</li>
+    <li>Within the 3-dot menu in the responses section (not the one at the top of the page)
+        and select "Download responses (csv)"</li>
+    <li>Unzip the file</li>
+    <li>Upload the unzipped file to <a href="{{ url_for('index') }}">RCV tabulator main page</a> for analysis.</li>
+</ul>
+
+<h3>Example Data</h3>
+
+<p>
+    If you'd like to examine some example data and try out the site, there is some
+    example results from a mock election with:
+</p>
+<ul>
+    <li>
+        An poll for the top three pizza toppings, where each voter can rank up to four
+        toppings on their ballot.
+    </li>
+    <li>
+        A poll for the best season, where each voter can rank all four seasons, but
+        only one season is the winner.
+    </li>
+</ul>
+
+You can <a href="{{ url_for('static', filename='example_election.csv') }}">download the mock CSV data</a> to inspect it,
+or see a <a href="{{ url_for('example') }}">visualization of the mock election results</a>.
+
+
+
+{% endblock %}
