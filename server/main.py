@@ -3,7 +3,7 @@ import json
 import os
 
 import plotly
-from flask import Flask, render_template, request, url_for
+from flask import Flask, abort, render_template, request, url_for
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms import BooleanField
@@ -30,6 +30,11 @@ class UploadForm(FlaskForm):
 @app.route("/instructions")
 def instructions():
     return render_template("instructions.html")
+
+
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
 
 
 @app.route("/", methods=["GET", "POST"])
