@@ -39,6 +39,8 @@ def index():
     if request.method == "POST":
         hide_exhausted = form.hide_exhausted.data
         file_storage = form.results_csv.data
+        if not file_storage:
+            abort(400)
         filename = file_storage.filename
 
         buffer = io.StringIO(
