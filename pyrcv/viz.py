@@ -1,4 +1,5 @@
 """Utilities for creating Sankey plots of RCV results."""
+
 from typing import Tuple
 
 import pandas as pd

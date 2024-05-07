@@ -3,6 +3,7 @@
 The format required is parsed in the function
 :func:`pyrcv.transform.parse_google_form_csv`.
 """
+
 from typing import TextIO
 
 import click

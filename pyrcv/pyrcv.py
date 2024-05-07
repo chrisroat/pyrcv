@@ -1,4 +1,5 @@
 """Implementation of Single Transferable Vote."""
+
 from __future__ import annotations
 
 import collections

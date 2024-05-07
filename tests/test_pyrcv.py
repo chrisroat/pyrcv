@@ -1,4 +1,5 @@
 """Tests for `pyrcv` package."""
+
 import pathlib
 
 import pytest

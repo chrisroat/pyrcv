@@ -1,4 +1,5 @@
 """Common types used in :mod:`pyrcv`."""
+
 from dataclasses import dataclass
 
 from icontract import invariant

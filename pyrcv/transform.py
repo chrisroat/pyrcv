@@ -1,4 +1,5 @@
 """Utilities to convert a csv format from Google Forms into pyrcv standard format."""
+
 import re
 from typing import Tuple
 

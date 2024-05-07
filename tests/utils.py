@@ -1,4 +1,5 @@
 """Utilities for testing."""
+
 from numpy.testing import assert_allclose, assert_equal
 
 

@@ -1,4 +1,5 @@
 """Simple script to generate example synthetic voting data."""
+
 import csv
 
 import numpy as np
