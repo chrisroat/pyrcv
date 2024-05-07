@@ -18,5 +18,5 @@ six==1.16.0
 tenacity==8.2.3
 typing_extensions==4.8.0
 tzdata==2023.3
-Werkzeug==3.0.1
+Werkzeug==3.0.3
 WTForms==3.0.1
