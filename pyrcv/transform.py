@@ -9,12 +9,9 @@ from pandas._typing import FilePath, ReadCsvBuffer
 
 from .types import PyRcvError, RaceData, RaceMetadata
 
-QUESTION_PATTERN = re.compile(
-    r"^(?P<question>.*?)"
-    r"(\s+\((?P<num_winners>\d+)\s+(winners?|WINNERS?|Winners?)\))?"
-    r"\s*? "
-    r"\[(?P<option>.*)\]$"
-)
+QUESTION_PATTERN = re.compile(r"^(?P<question>.*?)" r"\s*? " r"\[(?P<option>.*)\]$")
+
+WINNERS_PATTERN = re.compile(r"\((?P<num_winners>\d+)\s+(winners?|WINNERS?|Winners?)\)")
 
 
 def parse_google_form_csv(
@@ -94,18 +91,24 @@ def parse_header(header: list[str]) -> list[Tuple[RaceMetadata, slice]]:
     starts = []
     ends = []
     for col_idx, col in enumerate(header):
-        match = QUESTION_PATTERN.match(col)
-        if match:
-            question = match.group("question").strip()
-            num_winners = match.group("num_winners") or 1
-            option = match.group("option").strip()
+        question_match = QUESTION_PATTERN.match(col)
+        if question_match:
+            question = question_match.group("question").strip()
+            option = question_match.group("option").strip()
             if question != current_question:
                 if current_question is not None:
                     ends.append(col_idx)
                     options.append(current_options)
                     current_options = []
+
+                winners_match = WINNERS_PATTERN.search(question)
+                if winners_match:
+                    num_winners = int(winners_match.group("num_winners"))
+                else:
+                    num_winners = 1
+
                 questions.append(question)
-                num_winners_list.append(int(num_winners))
+                num_winners_list.append(num_winners)
                 starts.append(col_idx)
                 current_question = question
             current_options.append(option)

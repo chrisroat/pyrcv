@@ -31,20 +31,33 @@ PARSE_HEADER_DATA = [
     ),
     (
         ["Q0 (2 winners) [A00]", "Q0 (2 winners) [A01]", "Q0 (2 winners) [A02]"],
-        [(RM("Q0", 2, ["A00", "A01", "A02"]), slice(0, 3))],
+        [(RM("Q0 (2 winners)", 2, ["A00", "A01", "A02"]), slice(0, 3))],
+    ),
+    (
+        [
+            "Q0 (2 winners) Translated0 (2 FooBar) [A00]",
+            "Q0 (2 winners) Translated0 (2 FooBar) [A01]",
+            "Q0 (2 winners) Translated0 (2 FooBar) [A02]",
+        ],
+        [
+            (
+                RM("Q0 (2 winners) Translated0 (2 FooBar)", 2, ["A00", "A01", "A02"]),
+                slice(0, 3),
+            )
+        ],
     ),
     (["Q0 [A00] "], []),
     (["Q0[A00]"], []),
     (["Q0  [A00]"], [(RM("Q0", 1, ["A00"]), slice(0, 1))]),
-    (["Q0 (2  winners) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
-    (["Q0  (2 winners) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
-    (["Q0  (2 winners)  [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
-    (["Q0 (2 winners) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
-    (["Q0 (2 WINNERS) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
-    (["Q0 (2 Winners) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
-    (["Q0 (2 winner) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
-    (["Q0 (2 WINNER) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
-    (["Q0 (2 Winner) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2  winners) [A00]"], [(RM("Q0 (2  winners)", 2, ["A00"]), slice(0, 1))]),
+    (["Q0  (2 winners) [A00]"], [(RM("Q0  (2 winners)", 2, ["A00"]), slice(0, 1))]),
+    (["Q0  (2 winners)  [A00]"], [(RM("Q0  (2 winners)", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 winners) [A00]"], [(RM("Q0 (2 winners)", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 WINNERS) [A00]"], [(RM("Q0 (2 WINNERS)", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 Winners) [A00]"], [(RM("Q0 (2 Winners)", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 winner) [A00]"], [(RM("Q0 (2 winner)", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 WINNER) [A00]"], [(RM("Q0 (2 WINNER)", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 Winner) [A00]"], [(RM("Q0 (2 Winner)", 2, ["A00"]), slice(0, 1))]),
 ]
 
 
