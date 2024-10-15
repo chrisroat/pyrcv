@@ -1,4 +1,4 @@
-runtime: python311
+runtime: python312  # Make sure github test runners use same image and python versions.
 
 handlers:
   - url: /static
