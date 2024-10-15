@@ -11,7 +11,7 @@ from .types import PyRcvError, RaceData, RaceMetadata
 
 QUESTION_PATTERN = re.compile(
     r"^(?P<question>.*?)"
-    r"(\s+\((?P<num_winners>\d+)\s+winners?\))?"
+    r"(\s+\((?P<num_winners>\d+)\s+(winners?|WINNERS?|Winners?)\))?"
     r"\s*? "
     r"\[(?P<option>.*)\]$"
 )

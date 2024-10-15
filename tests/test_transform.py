@@ -39,6 +39,12 @@ PARSE_HEADER_DATA = [
     (["Q0 (2  winners) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
     (["Q0  (2 winners) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
     (["Q0  (2 winners)  [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 winners) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 WINNERS) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 Winners) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 winner) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 WINNER) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
+    (["Q0 (2 Winner) [A00]"], [(RM("Q0", 2, ["A00"]), slice(0, 1))]),
 ]
 
 
