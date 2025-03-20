@@ -1,3 +1,19 @@
 [build-system]
 requires = ["setuptools>=42"]
 build-backend = "setuptools.build_meta"
+
+[tool.bumpversion]
+current_version = "1.1.9"
+commit = true
+tag = true
+
+[[tool.bumpversion.files]]
+filename = "setup.cfg"
+
+[[tool.bumpversion.files]]
+filename = "pyrcv/__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "server/requirements.txt"
+search = "pyrcv=={current_version}"
+replace = "pyrcv=={new_version}"
