@@ -2,6 +2,12 @@
 History
 =======
 
+1.1.10 (2025-03-20)
+------------------
+
+* Fix typo in docs generation.
+* Replace deprecated versioning package with supported one.
+
 1.1.9 (2025-03-20)
 ------------------
 
