@@ -2,6 +2,12 @@
 History
 =======
 
+1.1.9 (2025-03-20)
+------------------
+
+* Modernize CI/CD workflow.
+* Fix broken docs generation.
+
 1.1.6-1.1.8 (2025-03-11)
 ------------------
 
