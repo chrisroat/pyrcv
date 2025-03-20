@@ -54,7 +54,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "pyrcv"
-copyright = "2022-2023, Christopher Roat"
+copyright = "2022-2025, Christopher Roat"
 author = "Christopher Roat"
 
 # The version info for the project you're documenting, acts as replacement
