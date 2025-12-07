@@ -2,6 +2,23 @@
 History
 =======
 
+1.2.0 (2025-12-06)
+------------------
+
+* Fix code to support plotly 6.0 (py) / 3.0 (js)
+* Update all dependencies across python package, server code, and html/js/css.
+* Drop support for python 3.10.
+
+1.1.13 (2025-12-02)
+------------------
+
+* UDependency updates to fix security vulnerabilities.
+
+1.1.12 (2025-07-24)
+------------------
+
+* Fix CI/CD workflow permissions.
+
 1.1.11 (2025-05-15)
 ------------------
 
