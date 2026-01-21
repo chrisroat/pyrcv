@@ -2,6 +2,11 @@
 History
 =======
 
+1.2.1 (2025-01-21)
+------------------
+
+* Dependency updates to fix security vulnerabilities.
+
 1.2.0 (2025-12-06)
 ------------------
 
@@ -12,7 +17,7 @@ History
 1.1.13 (2025-12-02)
 ------------------
 
-* UDependency updates to fix security vulnerabilities.
+* Dependency updates to fix security vulnerabilities.
 
 1.1.12 (2025-07-24)
 ------------------
