@@ -12,7 +12,7 @@ numpy==2.3.5
 packaging==25.0
 pandas==2.3.3
 plotly==6.5.0
-pyrcv==1.2.0
+pyrcv==1.2.1
 python-dateutil==2.9.0.post0
 pytz==2025.2
 six==1.17.0

@@ -2,7 +2,7 @@
 
 __author__ = """Chris Roat"""
 __email__ = "chris.roat@gmail.com"
-__version__ = "1.2.0"
+__version__ = "1.2.1"
 
 from .pyrcv import *  # noqa
 from .transform import *  # noqa
