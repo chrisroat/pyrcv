@@ -1,6 +1,7 @@
 import io
 import json
 import os
+from pathlib import Path
 
 import plotly
 from flask import Flask, abort, render_template, request, url_for
@@ -60,10 +61,10 @@ def index():
 
 @app.route("/example")
 def example():
-    root = request.url_root
     filename = "example_election.csv"
-    url = root + url_for("static", filename=filename)
-    data = election_results_viz_data(url)
+    filepath = Path(__file__).parent / "static" / filename
+    with open(filepath, "r") as f:
+        data = election_results_viz_data(f)
     return render_template("example.html", filename=filename, data=data)
 
 
