@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 import plotly
-from flask import Flask, abort, render_template, request, url_for
+from flask import Flask, abort, render_template, request
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 from wtforms import BooleanField
